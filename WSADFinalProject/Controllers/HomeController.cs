@@ -23,7 +23,28 @@ namespace WSADFinalProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Recipes()
+        {
+            return View();
+        }
+
+        public IActionResult CookingTools()
+        {
+            return View();
+        }
+
+        //About cooking page
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }
