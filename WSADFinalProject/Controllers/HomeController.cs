@@ -34,7 +34,7 @@ namespace WSADFinalProject.Controllers
         }
 
         //About cooking page
-        public IActionResult About()
+        public IActionResult AboutCooking()
         {
             return View();
         }
