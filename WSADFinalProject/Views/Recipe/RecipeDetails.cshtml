@@ -1,0 +1,34 @@
+@model Recipe
+@{
+    ViewData["Title"] = "Recipes // WSAD 2021";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Recipe Details</h1>
+    <table class="table table-bordered table-striped">
+    <tr>
+        <td>ID</td>
+        <td>@Model.RecipeID</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@Model.Name</td>
+    </tr>
+ <tr>
+        <td>Time</td>
+        <td>@Model.Time</td>
+    </tr>
+     <tr>
+        <td>Servings</td>
+        <td>@Model.Servings</td>
+    </tr>
+     <tr>
+        <td>Ingredients</td>
+        <td>@Model.Ingredients</td>
+    </tr>
+     <tr>
+        <td>Method</td>
+        <td>@Model.Method</td>
+    </tr>
+</table>
+</div>

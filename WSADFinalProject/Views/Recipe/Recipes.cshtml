@@ -1,0 +1,33 @@
+﻿@model List<Recipe>
+@{
+    ViewData["Title"] = "Recipes // WSAD 2021";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Recipe List</h1>
+    <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Servings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Recipe recipe in @Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Recipe" asp-action="RecipeDetails" asp-route-id="@recipe.Name">@recipe.Name</a>
+                </td>
+                <td>
+                    @recipe.Time
+                </td>
+                <td>
+                    @recipe.Servings
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
