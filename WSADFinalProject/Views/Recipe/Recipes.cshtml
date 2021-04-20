@@ -9,7 +9,9 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Time</th>
+            <th>Description</th>
+            <th>Prep Time</th>
+            <th>Cooking Time</th>
             <th>Servings</th>
         </tr>
     </thead>
@@ -18,10 +20,16 @@
         {
             <tr>
                 <td>
-                    <a asp-controller="Recipe" asp-action="RecipeDetails" asp-route-id="@recipe.Name">@recipe.Name</a>
+                    <a asp-controller="Recipe" asp-action="RecipeDetails" asp-route-id="@recipe.recipeID">@recipe.recipeName</a>
                 </td>
                 <td>
-                    @recipe.Time
+                    @recipe.recipeDesc
+                </td>
+                <td>
+                    @recipe.recipePrepTime
+                </td>
+                <td>
+                    @recipe.recipeCookTime
                 </td>
                 <td>
                     @recipe.Servings
