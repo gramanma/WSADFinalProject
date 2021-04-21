@@ -28,7 +28,9 @@ namespace WSADFinalProject
             services.AddControllersWithViews();
 
             services.AddDbContext<RecipeContext>(options =>
+
             options.UseSqlServer(Configuration.GetConnectionString("RecipeContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
