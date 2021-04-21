@@ -6,11 +6,15 @@
     <title>@ViewData["Title"] - Cooking Recipes</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container" style="background-color: #e3f2fd;">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Cooking Recipes</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -19,22 +23,32 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                                <span class="fas fa-home"></span>&nbsp;Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Recipe" asp-action="Recipes">Recipes</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Recipe" asp-action="List">
+                                <span class="fas fa-utensil-spoon"></span>&nbsp;Recipes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CookingTools">Useful Tools</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Ingredient" asp-action="List">
+                                <span class="fas fa-lemon"></span>&nbsp;Ingredients</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutCooking">About Cooking</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CookingTools">
+                                <span class="fas fa-utensils"></span>&nbsp;Useful Tools</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutCooking">
+                                <span class="fas fa-seedling"></span>&nbsp;About Cooking</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">
+                                <span class="fas fa-users"></span>&nbsp;About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">
+                                <span class="fas fa-phone"></span>&nbsp;Contact</a>
                         </li>
                     </ul>
                 </div>

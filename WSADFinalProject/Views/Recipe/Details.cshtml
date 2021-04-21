@@ -1,0 +1,66 @@
+@using WSADFinalProject.Models
+@model Recipe
+
+@{
+    ViewData["Title"] = " | Recipe Details";
+}
+
+<h1>@Model.RecipeName</h1>
+
+<h5>@Model.RecipeDesc</h5>
+
+<table class="table table-bordered table-sm">
+    <thead class="table-success">
+        <tr>
+            <th>
+
+                <a>Category</a>
+            </th>
+            <th>
+
+                <a>Servings</a>
+            </th>
+            <th>
+
+                <a>Prep Time</a>
+            </th>
+            <th>
+
+                <a>Cook Time</a>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>@Model.RecipeCategory.RecipeCategoryName</td>
+            <td>@Model.RecipeServings</td>
+            <td>@Model.RecipePrepTime</td>
+            <td>@Model.RecipeCookTime</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table table-borderless table-sm">
+    <thead>
+        <td style="width: 25%">@(Model.RecipeIngredients.Count > 1 ? "Ingredients:" : "Ingredient:")</td>
+        <td>Method:</td>
+    </thead>
+    <tbody>
+
+        <td>
+            @foreach (RecipeIngredient ri in Model.RecipeIngredients)
+            {
+                <p><a asp-action="Details" asp-controller="Ingredient" asp-route-id="@ri.IngredientId"
+                    asp-route-slug="@ri.Ingredient.IngredientName.Slug()">
+                        @ri.IngredientQty
+                        @ri.Ingredient.IngredientName
+                    </a></p>
+            }
+        </td>
+
+        <td>@Model.RecipeMethod</td>
+    </tbody>
+
+</table>

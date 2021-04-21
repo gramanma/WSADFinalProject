@@ -1,0 +1,48 @@
+@using WSADFinalProject.Models
+@model IngredientListViewModel
+@{
+    ViewData["Title"] = " | Ingredient Search";
+
+}
+
+<h1>Search recipes by ingredient...</h1>
+
+<table class="table table-bordered table-striped table-sm">
+
+    <thead class="table-success">
+        <tr>
+            <th>
+                
+                <a>Ingredient Name</a>
+            </th>
+            
+            <th>Recipe(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Ingredient Ingredient in Model.Ingredients)
+        {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@Ingredient.IngredientId"
+                   asp-route-slug="@Ingredient.IngredientName.Slug()">
+                    @Ingredient.IngredientName
+                </a>
+            </td>
+            
+            <td>
+                @foreach (var ri in Ingredient.RecipeIngredients)
+                {
+                    <p>
+                        <a asp-action="Details" asp-controller="Recipe"
+                           asp-route-id="@ri.RecipeId"
+                           asp-route-slug="@ri.Recipe.RecipeName.Slug()">
+                            @ri.Recipe.RecipeName
+                        </a>
+                    </p>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

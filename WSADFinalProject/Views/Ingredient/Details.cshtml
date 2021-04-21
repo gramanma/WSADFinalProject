@@ -1,0 +1,27 @@
+@using WSADFinalProject.Models
+@model Ingredient
+
+@{
+    ViewData["Title"] = " | Ingredient";
+}
+
+<h1>Recipes containing " @Model.IngredientName " ...</h1>
+
+<table class="table table-borderless table-sm">
+    <tbody>
+        <tr>
+            <td>
+                @foreach (var ri in Model.RecipeIngredients)
+                {
+                    <p>
+                        <a asp-action="Details" asp-controller="Recipe"
+                           asp-route-id="@ri.RecipeId"
+                           asp-route-slug="@ri.Recipe.RecipeName.Slug()">
+                            @ri.Recipe.RecipeName
+                        </a>
+                    </p>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -8,22 +8,29 @@ namespace WSADFinalProject.Models
             : base(options)
         { }
 
-        public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
         public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
+        public DbSet<RecipeCategory> RecipeCategorys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<RecipeIngredient>().HasKey(ba => new { ba.RecipeId, ba.IngredientId });
 
-            modelBuilder.Entity<RecipeIngredient>().HasKey(ri => new { ri.recipeId, ri.ingredientId });
+            modelBuilder.Entity<RecipeIngredient>().HasOne(ba => ba.Recipe)
+                .WithMany(b => b.RecipeIngredients)
+                .HasForeignKey(ba => ba.RecipeId);
+            modelBuilder.Entity<RecipeIngredient>().HasOne(ba => ba.Ingredient)
+                .WithMany(a => a.RecipeIngredients)
+                .HasForeignKey(ba => ba.IngredientId);
 
-            modelBuilder.Entity<RecipeIngredient>().HasOne(ri => ri.recipe)
-                .WithMany(r => r.recipeIngredients)
-                .HasForeignKey(ri => ri.recipeId);
-            modelBuilder.Entity<RecipeIngredient>().HasOne(ri => ri.ingredient)
-                .WithMany(i => i.recipeIngredients)
-                .HasForeignKey(ri => ri.ingredientId);
+            // Recipe: remove cascading delete with RecipeCategory
+            modelBuilder.Entity<Recipe>().HasOne(b => b.RecipeCategory)
+                .WithMany(g => g.Recipes)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            // seed initial data
+            modelBuilder.ApplyConfiguration(new SeedRecipeCategorys());
             modelBuilder.ApplyConfiguration(new SeedRecipes());
             modelBuilder.ApplyConfiguration(new SeedIngredients());
             modelBuilder.ApplyConfiguration(new SeedRecipeIngredients());

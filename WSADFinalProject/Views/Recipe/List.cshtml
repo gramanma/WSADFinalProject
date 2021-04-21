@@ -1,0 +1,57 @@
+﻿@using WSADFinalProject.Models
+@model RecipeListViewModel
+
+@{
+    ViewData["Title"] = " | Recipe Catalog";
+
+}
+
+<h1>Recipe List</h1>
+
+    <table class="table table-bordered table-striped table-sm">
+
+        <thead class="table-success">
+            <tr>
+                <th>
+                    
+                    <a>Recipe Name</a>
+                </th>
+                
+                <th>
+                    
+                    <a>Category</a>
+                </th>
+                <th>
+                    
+                    <a>Servings</a>
+                </th>
+                <th>
+                    
+                    <a>Prep Time</a>
+                </th>
+                <th>
+                    
+                    <a>Cook Time</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Recipe Recipe in Model.Recipes)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@Recipe.RecipeId"
+                           asp-route-slug="@Recipe.RecipeName.Slug()">
+                            @Recipe.RecipeName
+                        </a>
+                    </td>
+                    
+                    <td>@Recipe.RecipeCategory?.RecipeCategoryName</td>
+                    <td>@Recipe.RecipeServings</td>
+                    <td>@Recipe.RecipePrepTime</td>
+                    <td>@Recipe.RecipeCookTime</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>

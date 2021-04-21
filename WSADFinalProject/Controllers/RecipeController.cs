@@ -1,35 +1,36 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WSADFinalProject.Models;
 
-namespace WSADFinalProject.Controllers 
+namespace WSADFinalProject.Controllers
 {
-
-    public class RecipeController : Controller 
+    public class RecipeController : Controller
     {
-        private RecipeContext context;
+        private RecipeUnitOfWork data { get; set; }
+        public RecipeController(RecipeContext ctx) => data = new RecipeUnitOfWork(ctx);
 
-        public RecipeController(RecipeContext ctx)
+        public RedirectToActionResult Index() => RedirectToAction("List");
+        public ViewResult List()
         {
-            context = ctx;
-        }
-        public IActionResult RecipeDetails(int id)
-        {
-            
-            List<Recipe> recipes = context.Recipes.OrderBy(r => r.recipeID).ToList();
-            Recipe recipe = context.Recipes.Find(id);
 
-            return View(recipe);
+            var vm = new RecipeListViewModel {
+                Recipes = data.Recipes.List(new QueryOptions<Recipe> {
+                    OrderBy = r => r.RecipeName }),
+                Ingredients = data.Ingredients.List(new QueryOptions<Ingredient> {
+                    OrderBy = i => i.IngredientName }),
+                RecipeCategorys = data.RecipeCategorys.List(new QueryOptions<RecipeCategory> {
+                    OrderBy = c => c.RecipeCategoryName })
+            };
+
+            return View(vm);
         }
 
-        public IActionResult Recipes()
+        public ViewResult Details(int id)
         {
-            List<Recipe> recipes = context.Recipes.OrderBy(r => r.recipeID).ToList();
-            
-            return View(recipes);
+            var Recipe = data.Recipes.Get(new QueryOptions<Recipe> {
+                Includes = "RecipeIngredients.Ingredient, RecipeCategory",
+                Where = r => r.RecipeId == id
+            });
+            return View(Recipe);
         }
-        
-    }
+    }   
 }
-
