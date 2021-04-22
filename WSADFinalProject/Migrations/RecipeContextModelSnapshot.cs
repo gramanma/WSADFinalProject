@@ -147,6 +147,46 @@ namespace WSADFinalProject.Migrations
                         {
                             IngredientId = 23,
                             IngredientName = "water"
+                        },
+                        new
+                        {
+                            IngredientId = 24,
+                            IngredientName = "cheddar cheese"
+                        },
+                        new
+                        {
+                            IngredientId = 25,
+                            IngredientName = "ham"
+                        },
+                        new
+                        {
+                            IngredientId = 26,
+                            IngredientName = "bacon"
+                        },
+                        new
+                        {
+                            IngredientId = 27,
+                            IngredientName = "chicken breast"
+                        },
+                        new
+                        {
+                            IngredientId = 28,
+                            IngredientName = "bread"
+                        },
+                        new
+                        {
+                            IngredientId = 29,
+                            IngredientName = "mayonnaise"
+                        },
+                        new
+                        {
+                            IngredientId = 30,
+                            IngredientName = "lettuce"
+                        },
+                        new
+                        {
+                            IngredientId = 31,
+                            IngredientName = "tomato"
                         });
                 });
 
@@ -219,6 +259,28 @@ namespace WSADFinalProject.Migrations
                             RecipeName = "Chocolate Cake",
                             RecipePrepTime = "less than 30 mins",
                             RecipeServings = "Serves 12"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            RecipeCategoryId = "breakfast",
+                            RecipeCookTime = "less than 10 mins",
+                            RecipeDesc = "Try this classic omelette for brunch or serve with lots of green salad for a quick and satisfying dinner.",
+                            RecipeMethod = "Gently beat the eggs together in a mixing bowl and season, to taste, with salt and pepper. Heat the butter in a frying pan until foaming. Pour in the eggs and cook for a few seconds, until the bottom of the omelette is lightly set. Push the set parts of the omelette into the uncooked centre of the omelette. Cook again, until the omelette has set further, then push those set parts into the centre of the omelette again. Repeat the process until the eggs have just set but the omelette is still soft in the centre. Put the cheese and three-quarters of the ham in the centre of the omelette and cook until the cheese has melted. Increase the heat to high and cook the omelette for a further 30 seconds, or until it browns on the bottom. Fold the omelette in half, then remove the pan from the heat and tilt it slightly to move the omelette to the edge of the pan. Slide the omelette onto a serving plate, then shape it into a neat roll. Sprinkle over the remaining ham.",
+                            RecipeName = "Cheese and ham omelette",
+                            RecipePrepTime = "less than 30 mins",
+                            RecipeServings = "Serves 1"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            RecipeCategoryId = "sandwich",
+                            RecipeCookTime = "10 to 30 minss",
+                            RecipeDesc = "A club sandwich is a thing of beauty. You can fancy it up with extra fillings like avocado, mustard, thinly sliced red onion, but you can also keep it simple. This double layer sandwich is definitely filling enough for dinner with a side of soup or some crispy chips.",
+                            RecipeMethod = "Heat a frying pan over a medium heat. Add a drizzle of oil, then the bacon slices to the pan and fry for 5–10 minutes, turning the bacon every so often, until it is crisp and browned all over. Transfer to a plate lined with kitchen paper. Slice the chicken breast horizontally in two, so you have two thinner pieces. Season with salt and pepper, then fry the chicken in the hot bacon fat over a medium–high heat until they are browned and completely cooked through. Meanwhile, toast the bread to your liking. Spread each slice with a teaspoon of mayonnaise. Build the sandwich by adding lettuce leaves and tomato slices to the bottom piece of toast, season with salt and black pepper, then top with a slice of the crisp hot bacon. Slice each large piece of chicken breast into 4 or 5 equal pieces on a diagonal so they are easy to spread across the sandwich. Place the second piece of toast on top, then repeat the layering again finishing with the final piece of toast. Cut the sandwich diagonally in both directions to create 4 triangles, securing each with a cocktail stick.",
+                            RecipeName = "Club Sandwich",
+                            RecipePrepTime = "less than 30 mins",
+                            RecipeServings = "Serves 1"
                         });
                 });
 
@@ -259,6 +321,11 @@ namespace WSADFinalProject.Migrations
                         {
                             RecipeCategoryId = "soups",
                             RecipeCategoryName = "Soups"
+                        },
+                        new
+                        {
+                            RecipeCategoryId = "sandwich",
+                            RecipeCategoryName = "Sandwiches"
                         },
                         new
                         {
@@ -442,6 +509,78 @@ namespace WSADFinalProject.Migrations
                             RecipeId = 2,
                             IngredientId = 23,
                             IngredientQty = "250ml"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 5,
+                            IngredientQty = "10g"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 12,
+                            IngredientQty = "pinch"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 13,
+                            IngredientQty = "pinch"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 19,
+                            IngredientQty = "3"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 24,
+                            IngredientQty = "30g"
+                        },
+                        new
+                        {
+                            RecipeId = 3,
+                            IngredientId = 25,
+                            IngredientQty = "1 slice"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 26,
+                            IngredientQty = "2 slices"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 27,
+                            IngredientQty = "1"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 28,
+                            IngredientQty = "3 slices"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 29,
+                            IngredientQty = "1T"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 30,
+                            IngredientQty = "handful"
+                        },
+                        new
+                        {
+                            RecipeId = 4,
+                            IngredientId = 31,
+                            IngredientQty = "1 sliced"
                         });
                 });
 

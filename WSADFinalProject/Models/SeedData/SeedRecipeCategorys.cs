@@ -14,6 +14,7 @@ namespace WSADFinalProject.Models
                 new RecipeCategory { RecipeCategoryId = "beverages", RecipeCategoryName = "Beverages" },
                 new RecipeCategory { RecipeCategoryId = "appetizers", RecipeCategoryName = "Appetizers" },
                 new RecipeCategory { RecipeCategoryId = "soups", RecipeCategoryName = "Soups" },
+                new RecipeCategory { RecipeCategoryId = "sandwich", RecipeCategoryName = "Sandwiches" },
                 new RecipeCategory { RecipeCategoryId = "salads", RecipeCategoryName = "Salads" },
                 new RecipeCategory { RecipeCategoryId = "mandishes", RecipeCategoryName = "Main dishes" },
                 new RecipeCategory { RecipeCategoryId = "desserts", RecipeCategoryName = "Desserts" },

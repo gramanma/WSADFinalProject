@@ -31,7 +31,15 @@ namespace WSADFinalProject.Models
                 new Ingredient { IngredientId = 20, IngredientName = "milk" },
                 new Ingredient { IngredientId = 21, IngredientName = "vegetable oil" },
                 new Ingredient { IngredientId = 22, IngredientName = "vanilla" },
-                new Ingredient { IngredientId = 23, IngredientName = "water" }
+                new Ingredient { IngredientId = 23, IngredientName = "water" },
+                new Ingredient { IngredientId = 24, IngredientName = "cheddar cheese" },
+                new Ingredient { IngredientId = 25, IngredientName = "ham" },
+                new Ingredient { IngredientId = 26, IngredientName = "bacon" },
+                new Ingredient { IngredientId = 27, IngredientName = "chicken breast" },
+                new Ingredient { IngredientId = 28, IngredientName = "bread" },
+                new Ingredient { IngredientId = 29, IngredientName = "mayonnaise" },
+                new Ingredient { IngredientId = 30, IngredientName = "lettuce" },
+                new Ingredient { IngredientId = 31, IngredientName = "tomato" }
             );
         }
     }

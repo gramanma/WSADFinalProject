@@ -31,8 +31,21 @@ namespace WSADFinalProject.Models
                 new RecipeIngredient { RecipeId = 2, IngredientId = 20, IngredientQty = "250ml" },
                 new RecipeIngredient { RecipeId = 2, IngredientId = 21, IngredientQty = "125ml" },
                 new RecipeIngredient { RecipeId = 2, IngredientId = 22, IngredientQty = "2t" },
-                new RecipeIngredient { RecipeId = 2, IngredientId = 23, IngredientQty = "250ml" }
+                new RecipeIngredient { RecipeId = 2, IngredientId = 23, IngredientQty = "250ml" },
 
+                new RecipeIngredient { RecipeId = 3, IngredientId = 5, IngredientQty = "10g" },
+                new RecipeIngredient { RecipeId = 3, IngredientId = 12, IngredientQty = "pinch" },
+                new RecipeIngredient { RecipeId = 3, IngredientId = 13, IngredientQty = "pinch" },
+                new RecipeIngredient { RecipeId = 3, IngredientId = 19, IngredientQty = "3" },
+                new RecipeIngredient { RecipeId = 3, IngredientId = 24, IngredientQty = "30g" },
+                new RecipeIngredient { RecipeId = 3, IngredientId = 25, IngredientQty = "1 slice" },
+
+                new RecipeIngredient { RecipeId = 4, IngredientId = 26, IngredientQty = "2 slices" },
+                new RecipeIngredient { RecipeId = 4, IngredientId = 27, IngredientQty = "1" },
+                new RecipeIngredient { RecipeId = 4, IngredientId = 28, IngredientQty = "3 slices" },
+                new RecipeIngredient { RecipeId = 4, IngredientId = 29, IngredientQty = "1T" },
+                new RecipeIngredient { RecipeId = 4, IngredientId = 30, IngredientQty = "handful" },
+                new RecipeIngredient { RecipeId = 4, IngredientId = 31, IngredientQty = "1 sliced" }
             );
         }
     }
