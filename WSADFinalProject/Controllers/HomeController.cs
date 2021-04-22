@@ -24,7 +24,7 @@ namespace WSADFinalProject.Controllers
         }
 
         public IActionResult Recipes()
-        {
+        { 
             return View();
         }
 
