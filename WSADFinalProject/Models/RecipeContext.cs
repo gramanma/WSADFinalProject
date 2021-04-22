@@ -8,6 +8,7 @@ namespace WSADFinalProject.Models
             : base(options)
         { }
 
+
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
@@ -31,6 +32,7 @@ namespace WSADFinalProject.Models
 
             // seed initial data
             modelBuilder.ApplyConfiguration(new SeedRecipeCategorys());
+
             modelBuilder.ApplyConfiguration(new SeedRecipes());
             modelBuilder.ApplyConfiguration(new SeedIngredients());
             modelBuilder.ApplyConfiguration(new SeedRecipeIngredients());
