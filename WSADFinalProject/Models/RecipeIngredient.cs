@@ -2,9 +2,12 @@ namespace WSADFinalProject.Models
 {
     public class RecipeIngredient
     {
-        public int recipeId { get; set; }
-        public int ingredientId { get; set; }
-        public Recipe recipe { get; set; }
-        public Ingredient ingredient { get; set; }
+
+        public int RecipeId { get; set; }
+        public int IngredientId { get; set; }
+        public string IngredientQty {get; set; }
+        public Ingredient Ingredient { get; set; }
+        public Recipe Recipe { get; set; }
     }
 }
+

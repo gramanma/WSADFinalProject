@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WSADFinalProject.Models;
 
 namespace WSADFinalProject.Migrations
 {
     [DbContext(typeof(RecipeContext))]
-    partial class RecipeContextModelSnapshot : ModelSnapshot
+    [Migration("20210422024426_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,13 +22,10 @@ namespace WSADFinalProject.Migrations
 
             modelBuilder.Entity("WSADFinalProject.Models.Ingredient", b =>
                 {
-
                     b.Property<int>("IngredientId")
-
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
 
                     b.Property<string>("IngredientName")
                         .HasColumnType("nvarchar(max)");
@@ -195,13 +194,10 @@ namespace WSADFinalProject.Migrations
 
             modelBuilder.Entity("WSADFinalProject.Models.Recipe", b =>
                 {
-
                     b.Property<int>("RecipeId")
-
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
 
                     b.Property<string>("RecipeCategoryId")
                         .HasColumnType("nvarchar(450)");
@@ -305,7 +301,6 @@ namespace WSADFinalProject.Migrations
                     b.HasData(
                         new
                         {
-
                             RecipeCategoryId = "breakfast",
                             RecipeCategoryName = "Breakfast"
                         },
@@ -358,13 +353,11 @@ namespace WSADFinalProject.Migrations
                         {
                             RecipeCategoryId = "vegetarian",
                             RecipeCategoryName = "Vegetarian"
-
                         });
                 });
 
             modelBuilder.Entity("WSADFinalProject.Models.RecipeIngredient", b =>
                 {
-
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
@@ -599,12 +592,10 @@ namespace WSADFinalProject.Migrations
                         .WithMany("Recipes")
                         .HasForeignKey("RecipeCategoryId")
                         .OnDelete(DeleteBehavior.Restrict);
-
                 });
 
             modelBuilder.Entity("WSADFinalProject.Models.RecipeIngredient", b =>
                 {
-
                     b.HasOne("WSADFinalProject.Models.Ingredient", "Ingredient")
                         .WithMany("RecipeIngredients")
                         .HasForeignKey("IngredientId")
